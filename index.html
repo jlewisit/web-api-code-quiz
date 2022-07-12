@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Web APIs: Code Quiz</title>
+    <link rel="stylesheet" href="./Develop/style.css" />
+  </head>
+
+  <body>
+    <div class="wrapper">
+        <header>
+          <h1>JavaScript Fundamentals</h1>
+        </header>
+  
+        <div class="card">
+          <div class="card-header">
+            <h2>Code Quiz</h2>
+          </div>
+  
+          <div class="card-body">
+            <textarea readonly id="password" placeholder="quiz question" aria-label="Generated Password"></textarea>
+          </div>
+          <div class="card-body">
+            <textarea readonly id="password" placeholder="answer options" aria-label="Generated Password"></textarea>
+          </div>
+
+          <div id="settings">
+              <label for="Choice A">A</label>
+              <input type="checkbox" id="numbers" unchecked />
+              <label for="Choice B">B</label>
+              <input type="checkbox" id="symbols" unchecked />
+              <label for="Choice C">C</label>
+              <input type="checkbox" id="numbers" unchecked />
+              <label for="Choice D">D</label>
+              <input type="checkbox" id="symbols" unchecked />
+          </div>
+  
+          <div class="card-footer">
+            <button id="next">Submit Answer</button>
+          </div>
+        </div>
+       
+        <div class="display-container">
+            <div class="display-box2">
+            <button id="generate" class="btn">Begin Quiz</button>
+            </div>
+        </div>
+    </div>
+    <script src="./Develop/script.js"></script>
+  </body>
+
+</html>

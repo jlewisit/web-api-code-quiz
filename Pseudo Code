@@ -1,0 +1,17 @@
+CRITERIA:
+Multiple-choice questions on JavaScript fundamentals
+create an array of string questions
+
+Stores high scores to guage progress compared to peers
+high score display box with storage
+
+Time starts & 1st question presents when start clicked
+time display box
+
+Time subtracted when question answered incorrectly
+
+Game over when questions answered or timer reaches 0
+
+When game is over I can save my initials and my score
+prompt with storage
+
