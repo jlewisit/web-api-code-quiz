@@ -98,25 +98,29 @@ button[disabled] {
   float: right;
 }
 
+.answer-boxes {
+    text-align: left;
+}
+
 .display-container {
     margin-top: 25px;
     position: relative;
     text-align: left;
-    color: navy;
 }
 
-div.display-box2 {
+div.display-box1, div.display-box2, div.display-box3 {
     position: relative;
-    text-align: left;
+    margin: auto;
+    text-align: center;
     box-sizing: border-box;
-    width: 37.5%;
-    height: 300px;
-    border: 5px solid gray;
+    width: 33.3%;
+    height: 200px;
+    border-top: 5px solid hsl(206, 17%, 28%);
     float: left;
-    padding: 20px;
+    padding: 70px;
 }
 
-#password {
+#question, #answers {
   -webkit-appearance: none;
   -moz-appearance: none;
   appearance: none;
@@ -144,7 +148,7 @@ div.display-box2 {
     padding: 10px 15px;
   }
 
-  #password {
+  #question, #answers {
     font-size: 1rem;
   }
 }

@@ -1,12 +1,23 @@
 CRITERIA:
-Multiple-choice questions on JavaScript fundamentals
-create an array of string questions
+1) Multiple-choice questions on JavaScript fundamentals
+array of string questions
+
+
+
+
+
+
+
+
+
+
+
+
 
 Stores high scores to guage progress compared to peers
 high score display box with storage
 
-Time starts & 1st question presents when start clicked
-time display box
+1st question presents and timer starts upon button click
 
 Time subtracted when question answered incorrectly
 

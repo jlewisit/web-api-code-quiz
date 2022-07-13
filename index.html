@@ -20,19 +20,20 @@
           </div>
   
           <div class="card-body">
-            <textarea readonly id="password" placeholder="quiz question" aria-label="Generated Password"></textarea>
+            <textarea readonly id="question" placeholder="click Begin Quiz to start" aria-label="Generated Password"></textarea>
           </div>
+          
           <div class="card-body">
-            <textarea readonly id="password" placeholder="answer options" aria-label="Generated Password"></textarea>
+            <textarea readonly id="answers" placeholder="answer options" aria-label="Generated Password"></textarea>
           </div>
 
-          <div id="settings">
+          <div id="settings" class="answer-boxes">
               <label for="Choice A">A</label>
-              <input type="checkbox" id="numbers" unchecked />
+              <input type="checkbox" id="numbers" unchecked /><br>
               <label for="Choice B">B</label>
-              <input type="checkbox" id="symbols" unchecked />
+              <input type="checkbox" id="symbols" unchecked /><br>
               <label for="Choice C">C</label>
-              <input type="checkbox" id="numbers" unchecked />
+              <input type="checkbox" id="numbers" unchecked /><br>
               <label for="Choice D">D</label>
               <input type="checkbox" id="symbols" unchecked />
           </div>
@@ -43,8 +44,14 @@
         </div>
        
         <div class="display-container">
+            <div class="display-box1">
+              <h2 id="countdown"></h2>
+              <p id="main"></p>
+            </div>
             <div class="display-box2">
-            <button id="generate" class="btn">Begin Quiz</button>
+            <button id="begin" class="btn">Begin Quiz</button>
+            </div>
+            <div class="display-box3">High Score
             </div>
         </div>
     </div>
