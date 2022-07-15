@@ -35,30 +35,69 @@ correctAnswer: 0,
 },
 ];
 
-// code for targeting something in nested structure of objects and arrays
-var clickedAnswer = document.querySelector("#settings")
-arrayOfQuestions[0].answer;
 
+
+// Begin Quiz
+document.getElementById("begin").addEventListener("click", outputQuestion);
+
+// Code for targeting something in nested structure of objects and arrays
+var clickedAnswer = document.querySelector("#settings");
+
+function getQuestion() {
+arrayOfQuestions[0].answer;
 if (clickedAnswer.getAttribute("data-number") == arrayOfQuestions[0].correctAnswer) {
 currentScore + 10;
 console.log(currentScore);
 }
-else {
+else if (clickedAnswer.getAttribute("data-number") !== arrayOfQuestions[0].correctAnswer) {
   //deduct seconds from timer
   console.log("incorrect");
+  }
+
+  question;
+
+  for (var i = 0; i < arrayOfQuestions; i++);
 }
 
-document.getElementById("begin").addEventListener("click", displayQuestions);
 
-function displayQuestions() {
-  arrayOfQuestions = ("#placeholder");
-  for (var i = 0; i < arrayOfQuestions.length; i++);
-}
+function outputQuestion() {
+    question = getQuestion();
+    var questionText = document.getElementById("question");
+
+    questionText.value = question;
+
+  }
+
+
+
 
 // //*************Timer********************
 //*************Timer********************
 var timerEl = document.getElementById('countdown');
 var mainEl = document.getElementById('main');
+
+// // // Fernando's word game timer
+// function startTimer() {
+//   // Sets timer
+//   timer = setInterval(function() {
+//     timerCount--;
+//     timerElement.textContent = timerCount;
+//     if (timerCount >= 0) {
+//       // Tests if win condition is met
+//       if (isWin && timerCount > 0) {
+//         // Clears interval and stops timer
+//         clearInterval(timer);
+//         winGame();
+//       }
+//     }
+//     // Tests if time has run out
+//     if (timerCount === 0) {
+//       // Clears interval
+//       clearInterval(timer);
+//       loseGame();
+//     }
+//   }, 1000);
+// }
 
 var message =
   'GAME_OVER';
@@ -107,14 +146,27 @@ function displayMessage() {
   }, 1000);
 }
 
-countdown();
+
 
 document.querySelector("#choiceA").addEventListener("click", function(event) {
   var element = event.target;
   console.log(event.target);
  })
 
-
+// Fernando's word game win tracker
+function getWins() {
+  //Get stored value from client storage, if it exists
+  varstoredWins = localStorage.getItem("winCount");
+  //If stored value doesn't exist, set counter to 0
+  if (storedWins === null) {
+    winCounter = 0;
+  } else {
+    // If a value is retrieved from client storage set the winCounter to that value
+    winCounter = storedWins;
+  }
+  //Render win count to page
+  win.textContent = winCounter;
+}
 
 // document.getElementById("begin").addEventListener("click", outputQuestion);
 
@@ -151,13 +203,7 @@ document.querySelector("#choiceA").addEventListener("click", function(event) {
 //     return question;
 //   }
 
-// function outputQuestion() {
-//     question = createQuestion();
-//     var questionText = document.getElementById("question");
 
-//     questionText.value = question;
-
-//   }
 
 //   function askQuestions() {
 // var four = Number(prompt("What is 2 +2?"));
