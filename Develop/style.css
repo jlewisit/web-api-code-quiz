@@ -1,3 +1,5 @@
+
+
 /* Universal settings */
 *,
 *::before,
@@ -98,7 +100,7 @@ button[disabled] {
   float: right;
 }
 
-.answer-boxes {
+.answer-box-container {
     text-align: left;
 }
 
@@ -120,7 +122,7 @@ div.display-box1, div.display-box2, div.display-box3 {
     padding: 70px;
 }
 
-#question, #answers {
+ #question {
   -webkit-appearance: none;
   -moz-appearance: none;
   appearance: none;
@@ -139,7 +141,7 @@ div.display-box1, div.display-box2, div.display-box3 {
   border-radius: 6px;
   resize: none;
   overflow: hidden;
-}
+} */
 
 @media (max-width: 690px) {
   .btn {
@@ -157,4 +159,4 @@ div.display-box1, div.display-box2, div.display-box3 {
   .btn {
     font-size: 0.8rem;
   }
-}
+  } 

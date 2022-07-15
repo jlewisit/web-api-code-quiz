@@ -1,11 +1,62 @@
 // Adding variables
-var highScore = "";
-var question = "";
-var correct = 0;
-var incorrect = 0;
-var answers = [];
+var highScore = 0;
+var currentScore = 0;
+var timeLeft = 30;
+var arrayOfQuestions = [
+{
+    question: "Question number 1?",
+    answer: [
+      "Answer A", 
+      "Answer B",  //index 1 to target correct answer
+      "Answer C", 
+      "Answer D"
+    ],
+    correctAnswer: 1,
+},
+{
+question: "Inside which HTML element do we put the JavaScript?", 
+answer: [
+  "<js>", 
+  "<script>", 
+  "<scripting>", 
+  "<javascript>"
+],
+correctAnswer: 0,
+},
+ { 
+  question: "Where is the correct place to insert a JavaScript?", 
+  answer: [
+    "The <body> section", 
+    "The <head> section", 
+    "Both the <head> section and the <body> section are correct", 
+    "None of the above"
+  ],
+  correctAnswer: 0,
+},
+];
 
-//Timer
+// code for targeting something in nested structure of objects and arrays
+var clickedAnswer = document.querySelector("#settings")
+arrayOfQuestions[0].answer;
+
+if (clickedAnswer.getAttribute("data-number") == arrayOfQuestions[0].correctAnswer) {
+currentScore + 10;
+console.log(currentScore);
+}
+else {
+  //deduct seconds from timer
+  console.log("incorrect");
+}
+
+document.getElementById("begin").addEventListener("click", displayQuestions);
+
+function displayQuestions() {
+  arrayOfQuestions = ("#placeholder");
+  for (var i = 0; i < arrayOfQuestions.length; i++);
+}
+
+// //*************Timer********************
+//*************Timer********************
 var timerEl = document.getElementById('countdown');
 var mainEl = document.getElementById('main');
 
@@ -15,8 +66,6 @@ var words = message.split(' ');
 
 // Timer that counts down 
 function countdown() {
-  var timeLeft = 3;
-
   // Use the `setInterval()` method to call a function to be executed every 1000 milliseconds
   var timeInterval = setInterval(function () {
     // As long as the `timeLeft` is greater than 1
@@ -60,49 +109,41 @@ function displayMessage() {
 
 countdown();
 
-// //  Selects carousel element
-// var carousel = document.querySelector(".carouselbox");
+document.querySelector("#choiceA").addEventListener("click", function(event) {
+  var element = event.target;
+  console.log(event.target);
+ })
 
-// // Selects buttons using their parent carousel element
-// var next = carousel.querySelector(".next");
-// var index = 0;
-// var currentQuestion;
 
-// var questions = ["Inside which HTML element do we put the JavaScript? <js> <script> <scripting> <javascript>", "Where is the correct place to insert a JavaScript? The <body> section, The <head> section, Both the <head> section and the <body> section are correct"];
 
-// function navigate(direction) {
-//   index = index + direction;
-//   if (index < 0) { 
-//     index = questions.length - 1; 
-//   } else if (index > questions.length - 1) { 
-//     index = 0;
-//   }
-//   currentQuestion = questions[index];
-
-// //   carousel.style.backgroundImage = "url('" + currenQuestion + "')";
-// }
-
-// // Clicking on image opens a new window containing the image
-// carousel.addEventListener("click", function() {
-//   window.location.href = questions[index];
-// });
-
-// // Clicking on next button displays next image in carousel
-// next.addEventListener("click", function(event) {
-//   // Stops event from bubbling up and new window opening
-//   event.stopPropagation();
-
-//   navigate(1);
-// });
-
-// // Adding eventListeners
-// document.getElementById("next").addEventListener("click", askQuestions);
 // document.getElementById("begin").addEventListener("click", outputQuestion);
 
+// function paramPrompts() {
+//   if (lowerPrompt === false && upperPrompt === false && numbersPrompt === false && symbolsPrompt === false) {
+//     alert("At least one character type must be selected");
+//     return;
+//     }
+//     outputQuestion();
+//   }
+
+// function displayQuestion() {
+//   for (let i = 0; i <  questions.length; i++) {
+//     // questions[i];    
+//   }
+//   return question;
+// }
+
+// function outputQuestion() {
+//   question = displayQuestion();
+//   var questionText = document.getElementById("question");
+
+//   questionText.value = question;
+// }
 
 
-
-
+// // Adding eventListeners
+// document.getElementById("submit").addEventListener("click", askQuestions);
+// document.getElementById("begin").addEventListener("click", outputQuestion);
 
 // function createQuestion() {
 //     for (var i = 0; i < questions.length; i++) {
@@ -149,3 +190,23 @@ countdown();
 //   function printScore() {
 //     document.getElementById("score").innerHTML = "<span class=`your score`>Your score:  " + yourScore + "</span><br><span class=`cpu score`>Computer's score:  " + cpuScore + "</span>;
 //   }
+
+
+// //Write code to print all numbers from 1 to `num`
+// //
+// //1. create an array for numbers
+// //2. calling a function to print to the console
+// //3. making a loop
+//   //3a. define the loop parameters
+//   //3b. print each number into the console
+
+//   var logNums = function(num) {
+//     var numArray = [0,1,2];
+//     console.log(numArray);
+//     for (var i = 1; i <= num; i++) {
+//       //code that the for loop does every time
+//       console.log(i);
+//     }
+//     };
+  
+//   logNums(10);

@@ -20,26 +20,30 @@
           </div>
   
           <div class="card-body">
-            <textarea readonly id="question" placeholder="click Begin Quiz to start" aria-label="Generated Password"></textarea>
+            <textarea readonly id="question" placeholder="click Begin Quiz to start" aria-label="Current Question"></textarea>
           </div>
           
-          <div class="card-body">
-            <textarea readonly id="answers" placeholder="answer options" aria-label="Generated Password"></textarea>
+          <div class="answer-box-container" div id="settings">      
+            <div data-number="1">
+              <label for="choiceA">A</label>
+              <input type="checkbox" id="choiceA" unchecked />
+            </div>
+            <div data-number="2">
+              <label for="choiceB">B</label>
+              <input type="checkbox" id="choiceB" unchecked />
+            </div>
+            <div data-number="3">
+              <label for="choiceC">C</label>
+              <input type="checkbox" id="choiceC" unchecked />
+            </div>
+            <div data-number="4">
+              <label for="choiceB">D</label>
+              <input type="checkbox" id="choiceD" unchecked />
+            </div>
           </div>
 
-          <div id="settings" class="answer-boxes">
-              <label for="Choice A">A</label>
-              <input type="checkbox" id="numbers" unchecked /><br>
-              <label for="Choice B">B</label>
-              <input type="checkbox" id="symbols" unchecked /><br>
-              <label for="Choice C">C</label>
-              <input type="checkbox" id="numbers" unchecked /><br>
-              <label for="Choice D">D</label>
-              <input type="checkbox" id="symbols" unchecked />
-          </div>
-  
           <div class="card-footer">
-            <button id="next">Submit Answer</button>
+            <button id="submit">Submit Answer</button>
           </div>
         </div>
        
@@ -51,7 +55,8 @@
             <div class="display-box2">
             <button id="begin" class="btn">Begin Quiz</button>
             </div>
-            <div class="display-box3">High Score
+            <div class="display-box3">
+              High Score
             </div>
         </div>
     </div>
@@ -59,3 +64,13 @@
   </body>
 
 </html>
+
+
+                <!-- <div class="container">
+                <div id="first" class="box" data-number="1" data-state="hidden"></div> -->
+
+                <!-- <div class="box" data-number="2" data-state="hidden"></div>
+                <div class="box" data-number="3" data-state="hidden"></div>
+                <div class="box" data-number="4" data-state="hidden"></div>
+                <div class="box" data-number="5" data-state="hidden"></div>
+                <div class="box" data-number="6" data-state="hidden"></div> -->
