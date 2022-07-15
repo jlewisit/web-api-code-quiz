@@ -7,11 +7,11 @@ var arrayOfQuestions = [
     question: "Question number 1?",
     answer: [
       "Answer A", 
-      "Answer B",  //index 1 to target correct answer
+      "Answer B",  
       "Answer C", 
       "Answer D"
     ],
-    correctAnswer: 1,
+    correctAnswer: "Answer A",
 },
 {
 question: "Inside which HTML element do we put the JavaScript?", 
@@ -35,30 +35,43 @@ correctAnswer: 0,
 },
 ];
 
+// Button element for each answer with button text = arrayOfQuestions[index].answer[i]
+var buttonA = document.createElement("button1");
+button.textContent = arrayOfQuestions[qIndex].answer[i];
+var buttonB = document.createElement("button2");
+button.textContent = arrayOfQuestions[qIndex].answer[i];
+var buttonC = document.createElement("button3");
+button.textContent = arrayOfQuestions[qIndex].answer[i];
+var buttonD = document.createElement("button4");
+button.textContent = arrayOfQuestions[qIndex].answer[i];
 
+  // Add data attribute called data-answer 
+  var answerAtt = element.getAttribute(data-answer)
+  // Assign each option text event listener for each button 
+  answerAtt.addEventListener("click", function(event) {
+  var element = event.target;
+  }
 
 // Begin Quiz
 document.getElementById("begin").addEventListener("click", outputQuestion);
 
 // Code for targeting something in nested structure of objects and arrays
 var clickedAnswer = document.querySelector("#settings");
+// Declare a index variable and initialize to 0
+var qIndex = 0;
 
 function getQuestion() {
-arrayOfQuestions[0].answer;
-if (clickedAnswer.getAttribute("data-number") == arrayOfQuestions[0].correctAnswer) {
-currentScore + 10;
-console.log(currentScore);
-}
-else if (clickedAnswer.getAttribute("data-number") !== arrayOfQuestions[0].correctAnswer) {
-  //deduct seconds from timer
-  console.log("incorrect");
+  // within getQuestion() function create an element H2 
+  var element = document.createElement("h2");
+  // Add text to h2 using .innerHTML = arrayOfQuestions[index].question
+  element.innerHTML = arrayOfQuestions[qIndex].question
+
+  // Append the element to the parent element
+  document.getElementById("questions").append(element);
+  for (var i = 0; i < arrayOfQuestions; i++) {
   }
-
-  question;
-
-  for (var i = 0; i < arrayOfQuestions; i++);
+  // append h2 element to a div with an id question
 }
-
 
 function outputQuestion() {
     question = getQuestion();
@@ -66,193 +79,104 @@ function outputQuestion() {
 
     questionText.value = question;
 
-  }
-
-
-
-
-// //*************Timer********************
-//*************Timer********************
-var timerEl = document.getElementById('countdown');
-var mainEl = document.getElementById('main');
-
-// // // Fernando's word game timer
-// function startTimer() {
-//   // Sets timer
-//   timer = setInterval(function() {
-//     timerCount--;
-//     timerElement.textContent = timerCount;
-//     if (timerCount >= 0) {
-//       // Tests if win condition is met
-//       if (isWin && timerCount > 0) {
-//         // Clears interval and stops timer
-//         clearInterval(timer);
-//         winGame();
-//       }
-//     }
-//     // Tests if time has run out
-//     if (timerCount === 0) {
-//       // Clears interval
-//       clearInterval(timer);
-//       loseGame();
-//     }
-//   }, 1000);
-// }
-
-var message =
-  'GAME_OVER';
-var words = message.split(' ');
-
-// Timer that counts down 
-function countdown() {
-  // Use the `setInterval()` method to call a function to be executed every 1000 milliseconds
-  var timeInterval = setInterval(function () {
-    // As long as the `timeLeft` is greater than 1
-    if (timeLeft > 1) {
-      // Set the `textContent` of `timerEl` to show the remaining seconds
-      timerEl.textContent = timeLeft + ' seconds remaining';
-      // Decrement `timeLeft` by 1
-      timeLeft--;
-    } else if (timeLeft === 1) {
-      // When `timeLeft` is equal to 1, rename to 'second' instead of 'seconds'
-      timerEl.textContent = timeLeft + ' second remaining';
-      timeLeft--;
-    } else {
-      // Once `timeLeft` gets to 0, set `timerEl` to an empty string
-      timerEl.textContent = '';
-      // Use `clearInterval()` to stop the timer
-      clearInterval(timeInterval);
-      // Call the `displayMessage()` function
-      displayMessage();
-    }
-  }, 1000);
 }
-
-// Displays the message one word at a time
-function displayMessage() {
-  var wordCount = 0;
-
-  // Uses the `setInterval()` method to call a function to be executed every 1000 milliseconds
-  var msgInterval = setInterval(function () {
-    // If there are no more words left in the message
-    if (words[wordCount] === undefined) {
-      // Use `clearInterval()` to stop the timer
-      clearInterval(msgInterval);
-    } else {
-      // Display one word of the message
-      mainEl.textContent = words[wordCount];
-      wordCount++;
-    }
-  }, 1000);
-}
-
-
 
 document.querySelector("#choiceA").addEventListener("click", function(event) {
   var element = event.target;
   console.log(event.target);
  })
 
-// Fernando's word game win tracker
-function getWins() {
-  //Get stored value from client storage, if it exists
-  varstoredWins = localStorage.getItem("winCount");
-  //If stored value doesn't exist, set counter to 0
-  if (storedWins === null) {
-    winCounter = 0;
-  } else {
-    // If a value is retrieved from client storage set the winCounter to that value
-    winCounter = storedWins;
-  }
-  //Render win count to page
-  win.textContent = winCounter;
-}
 
-// document.getElementById("begin").addEventListener("click", outputQuestion);
+// // //*************Timer********************
+// var timerEl = document.getElementById('countdown');
+// var mainEl = document.getElementById('main');
 
-// function paramPrompts() {
-//   if (lowerPrompt === false && upperPrompt === false && numbersPrompt === false && symbolsPrompt === false) {
-//     alert("At least one character type must be selected");
-//     return;
+// // // // Fernando's word game timer
+// // function startTimer() {
+// //   // Sets timer
+// //   timer = setInterval(function() {
+// //     timerCount--;
+// //     timerElement.textContent = timerCount;
+// //     if (timerCount >= 0) {
+// //       // Tests if win condition is met
+// //       if (isWin && timerCount > 0) {
+// //         // Clears interval and stops timer
+// //         clearInterval(timer);
+// //         winGame();
+// //       }
+// //     }
+// //     // Tests if time has run out
+// //     if (timerCount === 0) {
+// //       // Clears interval
+// //       clearInterval(timer);
+// //       loseGame();
+// //     }
+// //   }, 1000);
+// // }
+
+// var message =
+//   'GAME_OVER';
+// var words = message.split(' ');
+
+// // Timer that counts down 
+// function countdown() {
+//   // Use the `setInterval()` method to call a function to be executed every 1000 milliseconds
+//   var timeInterval = setInterval(function () {
+//     // As long as the `timeLeft` is greater than 1
+//     if (timeLeft > 1) {
+//       // Set the `textContent` of `timerEl` to show the remaining seconds
+//       timerEl.textContent = timeLeft + ' seconds remaining';
+//       // Decrement `timeLeft` by 1
+//       timeLeft--;
+//     } else if (timeLeft === 1) {
+//       // When `timeLeft` is equal to 1, rename to 'second' instead of 'seconds'
+//       timerEl.textContent = timeLeft + ' second remaining';
+//       timeLeft--;
+//     } else {
+//       // Once `timeLeft` gets to 0, set `timerEl` to an empty string
+//       timerEl.textContent = '';
+//       // Use `clearInterval()` to stop the timer
+//       clearInterval(timeInterval);
+//       // Call the `displayMessage()` function
+//       displayMessage();
 //     }
-//     outputQuestion();
-//   }
-
-// function displayQuestion() {
-//   for (let i = 0; i <  questions.length; i++) {
-//     // questions[i];    
-//   }
-//   return question;
+//   }, 1000);
 // }
 
-// function outputQuestion() {
-//   question = displayQuestion();
-//   var questionText = document.getElementById("question");
+// // Displays the message one word at a time
+// function displayMessage() {
+//   var wordCount = 0;
 
-//   questionText.value = question;
-// }
-
-
-// // Adding eventListeners
-// document.getElementById("submit").addEventListener("click", askQuestions);
-// document.getElementById("begin").addEventListener("click", outputQuestion);
-
-// function createQuestion() {
-//     for (var i = 0; i < questions.length; i++) {
+//   // Uses the `setInterval()` method to call a function to be executed every 1000 milliseconds
+//   var msgInterval = setInterval(function () {
+//     // If there are no more words left in the message
+//     if (words[wordCount] === undefined) {
+//       // Use `clearInterval()` to stop the timer
+//       clearInterval(msgInterval);
+//     } else {
+//       // Display one word of the message
+//       mainEl.textContent = words[wordCount];
+//       wordCount++;
 //     }
-//     return question;
-//   }
-
-
-
-//   function askQuestions() {
-// var four = Number(prompt("What is 2 +2?"));
-// if (four === 4) {
-//     alert("Correct!");
+//   }, 1000);
 // }
-// else if (four !== "4") {
-//         alert("Sorry, the correct answer was 4.");
+
+
+
+// // Fernando's word game win tracker
+// function getWins() {
+//   //Get stored value from client storage, if it exists
+//   varstoredWins = localStorage.getItem("winCount");
+//   //If stored value doesn't exist, set counter to 0
+//   if (storedWins === null) {
+//     winCounter = 0;
+//   } else {
+//     // If a value is retrieved from client storage set the winCounter to that value
+//     winCounter = storedWins;
+//   }
+//   //Render win count to page
+//   win.textContent = winCounter;
 // }
-//   }
 
-//   //Print stats with line breaks
-//   window.alert(
-//     "Stats:\nCorrect Answers:  " + correct  + "\nIncorrect Answers:  " + incorrect + "\nTies:  " + ties
-//   )
+// // document.getElementById("begin").addEventListener("click", outputQuestion);
 
-//   //Ask user to take re-take quiz
-//   var retake = window.confirm("Re-take quiz?");
-
-//   //If user pressed okay, run function again
-//   if (retake) {
-//     correct = 0;
-//     incorrect = 0;
-//     takeQuiz();
-//   }
-
-//   // Run the quiz for the first time
-//   takeQuiz
-  
-//   function printScore() {
-//     document.getElementById("score").innerHTML = "<span class=`your score`>Your score:  " + yourScore + "</span><br><span class=`cpu score`>Computer's score:  " + cpuScore + "</span>;
-//   }
-
-
-// //Write code to print all numbers from 1 to `num`
-// //
-// //1. create an array for numbers
-// //2. calling a function to print to the console
-// //3. making a loop
-//   //3a. define the loop parameters
-//   //3b. print each number into the console
-
-//   var logNums = function(num) {
-//     var numArray = [0,1,2];
-//     console.log(numArray);
-//     for (var i = 1; i <= num; i++) {
-//       //code that the for loop does every time
-//       console.log(i);
-//     }
-//     };
-  
-//   logNums(10);
