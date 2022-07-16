@@ -21,7 +21,7 @@ answer: [
   "<scripting>", 
   "<javascript>"
 ],
-correctAnswer: 0,
+correctAnswer: "<js>",
 },
  { 
   question: "Where is the correct place to insert a JavaScript?", 
@@ -31,19 +31,15 @@ correctAnswer: 0,
     "Both the <head> section and the <body> section are correct", 
     "None of the above"
   ],
-  correctAnswer: 0,
+  correctAnswer: "The <body> section",
 },
 ];
 
 // Button element for each answer with button text = arrayOfQuestions[index].answer[i]
-var buttonA = document.createElement("button1");
-button.textContent = arrayOfQuestions[qIndex].answer[i];
-var buttonB = document.createElement("button2");
-button.textContent = arrayOfQuestions[qIndex].answer[i];
-var buttonC = document.createElement("button3");
-button.textContent = arrayOfQuestions[qIndex].answer[i];
-var buttonD = document.createElement("button4");
-button.textContent = arrayOfQuestions[qIndex].answer[i];
+for (var i = 0; i < 5; i++) {
+  var answerText = arrayOfQuestions[qIndex].answer[i];
+  var button = document.createElement('button');
+  button.textContent = answerText;
 
   // Add data attribute called data-answer 
   var answerAtt = element.getAttribute(data-answer)
@@ -77,7 +73,7 @@ function outputQuestion() {
     question = getQuestion();
     var questionText = document.getElementById("question");
 
-    questionText.value = question;
+    questionText.textContent = question;
 
 }
 
@@ -87,96 +83,53 @@ document.querySelector("#choiceA").addEventListener("click", function(event) {
  })
 
 
-// // //*************Timer********************
-// var timerEl = document.getElementById('countdown');
-// var mainEl = document.getElementById('main');
+// //*************Timer********************
+var timerEl = document.getElementById('countdown');
+var mainEl = document.getElementById('main');
 
-// // // // Fernando's word game timer
-// // function startTimer() {
-// //   // Sets timer
-// //   timer = setInterval(function() {
-// //     timerCount--;
-// //     timerElement.textContent = timerCount;
-// //     if (timerCount >= 0) {
-// //       // Tests if win condition is met
-// //       if (isWin && timerCount > 0) {
-// //         // Clears interval and stops timer
-// //         clearInterval(timer);
-// //         winGame();
-// //       }
-// //     }
-// //     // Tests if time has run out
-// //     if (timerCount === 0) {
-// //       // Clears interval
-// //       clearInterval(timer);
-// //       loseGame();
-// //     }
-// //   }, 1000);
-// // }
+var message =
+  'GAME_OVER';
+var words = message.split(' ');
 
-// var message =
-//   'GAME_OVER';
-// var words = message.split(' ');
+// Timer that counts down 
+function countdown() {
+  // Use the `setInterval()` method to call a function to be executed every 1000 milliseconds
+  var timeInterval = setInterval(function () {
+    // As long as the `timeLeft` is greater than 1
+    if (timeLeft > 1) {
+      // Set the `textContent` of `timerEl` to show the remaining seconds
+      timerEl.textContent = timeLeft + ' seconds remaining';
+      // Decrement `timeLeft` by 1
+      timeLeft--;
+    } else if (timeLeft === 1) {
+      // When `timeLeft` is equal to 1, rename to 'second' instead of 'seconds'
+      timerEl.textContent = timeLeft + ' second remaining';
+      timeLeft--;
+    } else {
+      // Once `timeLeft` gets to 0, set `timerEl` to an empty string
+      timerEl.textContent = '';
+      // Use `clearInterval()` to stop the timer
+      clearInterval(timeInterval);
+      // Call the `displayMessage()` function
+      displayMessage();
+    }
+  }, 1000);
+}
 
-// // Timer that counts down 
-// function countdown() {
-//   // Use the `setInterval()` method to call a function to be executed every 1000 milliseconds
-//   var timeInterval = setInterval(function () {
-//     // As long as the `timeLeft` is greater than 1
-//     if (timeLeft > 1) {
-//       // Set the `textContent` of `timerEl` to show the remaining seconds
-//       timerEl.textContent = timeLeft + ' seconds remaining';
-//       // Decrement `timeLeft` by 1
-//       timeLeft--;
-//     } else if (timeLeft === 1) {
-//       // When `timeLeft` is equal to 1, rename to 'second' instead of 'seconds'
-//       timerEl.textContent = timeLeft + ' second remaining';
-//       timeLeft--;
-//     } else {
-//       // Once `timeLeft` gets to 0, set `timerEl` to an empty string
-//       timerEl.textContent = '';
-//       // Use `clearInterval()` to stop the timer
-//       clearInterval(timeInterval);
-//       // Call the `displayMessage()` function
-//       displayMessage();
-//     }
-//   }, 1000);
-// }
+// Displays the message one word at a time
+function displayMessage() {
+  var wordCount = 0;
 
-// // Displays the message one word at a time
-// function displayMessage() {
-//   var wordCount = 0;
-
-//   // Uses the `setInterval()` method to call a function to be executed every 1000 milliseconds
-//   var msgInterval = setInterval(function () {
-//     // If there are no more words left in the message
-//     if (words[wordCount] === undefined) {
-//       // Use `clearInterval()` to stop the timer
-//       clearInterval(msgInterval);
-//     } else {
-//       // Display one word of the message
-//       mainEl.textContent = words[wordCount];
-//       wordCount++;
-//     }
-//   }, 1000);
-// }
-
-
-
-// // Fernando's word game win tracker
-// function getWins() {
-//   //Get stored value from client storage, if it exists
-//   varstoredWins = localStorage.getItem("winCount");
-//   //If stored value doesn't exist, set counter to 0
-//   if (storedWins === null) {
-//     winCounter = 0;
-//   } else {
-//     // If a value is retrieved from client storage set the winCounter to that value
-//     winCounter = storedWins;
-//   }
-//   //Render win count to page
-//   win.textContent = winCounter;
-// }
-
-// // document.getElementById("begin").addEventListener("click", outputQuestion);
-
+  // Uses the `setInterval()` method to call a function to be executed every 1000 milliseconds
+  var msgInterval = setInterval(function () {
+    // If there are no more words left in the message
+    if (words[wordCount] === undefined) {
+      // Use `clearInterval()` to stop the timer
+      clearInterval(msgInterval);
+    } else {
+      // Display one word of the message
+      mainEl.textContent = words[wordCount];
+      wordCount++;
+    }
+  }, 1000);
+}
